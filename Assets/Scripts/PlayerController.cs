@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     void OnJump()
     {
-        if (isOnGround)
+        if (isOnGround && !gameOver)
         {
             Debug.Log("jump");
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
