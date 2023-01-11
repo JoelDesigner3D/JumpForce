@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
 
         Physics.gravity *= garvityModifier;
 
-
     }
 
     // Update is called once per frame
@@ -49,13 +48,15 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
-
         }
         
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             gameOver = true;
             Debug.Log("Game Over !");
+
+           playerAnim.SetBool("Death_b", true);
+           playerAnim.SetInteger("DeathType_int", 1);
         }
     }
 
