@@ -27,12 +27,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-        
-    }
 
     void OnJump()
     {
@@ -45,6 +39,7 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetTrigger("Jump_trig");
             dirtParticle.Stop();
         }
+        
         
     }
 
