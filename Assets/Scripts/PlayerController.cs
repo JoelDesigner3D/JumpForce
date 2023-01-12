@@ -7,10 +7,14 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody playerRb;
     private Animator playerAnim;
+    public ParticleSystem explosionParticles;
     public float jumpForce = 10;
     public float garvityModifier;
     private bool isOnGround = true;
     public bool gameOver = false;
+
+    public AudioSource crashSound;
+    public AudioSource music;
 
     // Start is called before the first frame update
     void Start()
@@ -52,11 +56,15 @@ public class PlayerController : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Obstacle"))
         {
+            crashSound.Play();
+
             gameOver = true;
             Debug.Log("Game Over !");
 
            playerAnim.SetBool("Death_b", true);
            playerAnim.SetInteger("DeathType_int", 1);
+
+            explosionParticles.Play();
         }
     }
 
