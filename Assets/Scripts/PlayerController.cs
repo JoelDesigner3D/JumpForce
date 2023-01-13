@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
         Physics.gravity *= garvityModifier;
 
+        //music.Play();
+
     }
 
 
